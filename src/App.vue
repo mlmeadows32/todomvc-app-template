@@ -1,8 +1,8 @@
 <template>
   <section class="todoapp">
     <header class="header">
-      <h1>todos</h1>
-      <input class="new-todo" placeholder="What needs to be done?" autofocus />
+      <h1>Honey-dos</h1>
+      <input class="new-todo" placeholder="What does Jared need to do?" autofocus />
     </header>
     <!-- This section should be hidden by default and shown when there are todos -->
     <section class="main">
@@ -34,19 +34,17 @@
       <button class="clear-completed">Clear completed</button>
     </footer>
   </section>
+{{todos.length}}
 </template>
 
 <script setup lang="ts">
 import type {Todo} from "./domain/Todo"
 let message:string = "whateveryouwant"
 const numbers = [78,99,13]
-const todos:Todo[] = [{
-	checked: true,
-	message: "things"
-},{
-	checked: false,
-	message: "stuff"
-}
+const todos:Todo[] = [
+	{checked: false, message: "things"},
+	{checked: false, message: "stuff"},
+	{checked: false, message: "and more"}
 ]
 console.log(message,1,2,numbers,todos);
 </script>
