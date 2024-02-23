@@ -1,3 +1,6 @@
+@import url('/node_modules/todomvc-common/base.css');
+@import url('/node_modules/todomvc-app-css/index.css');
+
 /*
 
 app-template.css overrides
@@ -6,3 +9,87 @@ remove this comment if used
 remove this file if not
 
 */
+
+input {
+	width: 100%;
+	border: none;
+	font-size: 24px;
+}
+
+/** begin: fix margin caused by previous position:absolute; on destroy button */
+.todo-list li:hover {
+	flex-wrap: unset;
+	padding-right: 0;
+}
+
+.todo-list li .destroy, .todo-list li .destroy {
+	position: static;
+	justify-content: center;
+	align-items: center;
+}
+
+.todo-list li:focus-within .destroy, .todo-list li:hover .destroy {
+	display: flex !important;
+}
+
+.todo-list li label {
+	padding-right: 4px;
+}
+
+.todo-list li .destroy::after {
+	display: flex;
+	align-items: center;
+}
+
+.view {
+	display: flex;
+}
+
+.view label {
+	flex-grow: 1;
+}
+/** end: fix margin caused by previous position:absolute; on destroy button */
+
+/** begin: fix margin caused by previous position:absolute; on  header */
+h1 {
+	font-size: 80px;
+	font-weight: 200;
+	text-align: center;
+	color: #b83f45;
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
+	line-height: normal;
+	margin: 40px 0;
+}
+
+.todoapp {
+	margin: 0;
+}
+
+html body.body {
+	display: flex !important;
+	flex-direction: column;
+	align-items: center;
+}
+
+#app {
+	min-width: 45rem;
+}
+/** end: fix margin caused by previous position:absolute; on  header */
+
+@media screen and (max-width: 45rem) {
+	h1 {
+		font-size: 5rem;
+		margin: 20px 0;
+	}
+	#app {
+		min-width: 100%;
+	}
+}
+
+@media screen and (max-width: 40rem) {
+	h1 {
+		font-size: 4rem;
+	}
+}

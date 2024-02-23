@@ -18,3 +18,20 @@ const props = defineProps({
   todo: { type: Object as PropType<Todo>, required: true },
 });
 </script>
+
+<style scoped>
+.toggle .destroy {
+	cursor: pointer;
+}
+
+.completed {
+	color: #949494;
+	text-decoration: line-through;
+}
+
+@media screen and (max-width: 700px) {
+	button.destroy {
+		display: flex;
+	}
+}
+</style>
